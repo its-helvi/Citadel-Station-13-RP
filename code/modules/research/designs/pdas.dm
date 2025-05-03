@@ -50,9 +50,9 @@
 	id = "cart_science"
 	build_path = /obj/item/cartridge/signal/science
 
-/datum/prototype/design/science/pda_cartridge/quartermaster
+/datum/prototype/design/science/pda_cartridge/cargo
 	id = "cart_quartermaster"
-	build_path = /obj/item/cartridge/quartermaster
+	build_path = /obj/item/cartridge/cargo
 
 /datum/prototype/design/science/pda_cartridge/head
 	id = "cart_head"

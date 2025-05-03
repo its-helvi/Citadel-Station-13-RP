@@ -27,7 +27,7 @@
 		/obj/item/cartridge/signal/science = 10,
 		/obj/item/pda/heads = 10,
 		/obj/item/cartridge/captain = 3,
-		/obj/item/cartridge/quartermaster = 10,
+		/obj/item/cartridge/cargo = 10,
 	)
 	req_log_access = ACCESS_COMMAND_HOP
 	has_logs = 1

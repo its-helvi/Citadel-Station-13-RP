@@ -179,11 +179,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 //	hidden = 1
 
 /obj/item/pda/cargo
-	default_cartridge = /obj/item/cartridge/quartermaster
+	default_cartridge = /obj/item/cartridge/cargo
 	icon_state = "pda-cargo"
 
 /obj/item/pda/quartermaster
-	default_cartridge = /obj/item/cartridge/quartermaster
+	default_cartridge = /obj/item/cartridge/cargo
 	icon_state = "pda-q"
 
 /obj/item/pda/shaftminer
@@ -1553,7 +1553,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/newcart = pick(
 		/obj/item/cartridge/engineering,
 		/obj/item/cartridge/medical,
-		/obj/item/cartridge/quartermaster,
+		/obj/item/cartridge/cargo,
 		/obj/item/cartridge/security,
 		/obj/item/cartridge/signal/science,
 	)

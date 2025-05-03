@@ -33,7 +33,7 @@ var/list/research_cartridges = list(
 	)
 
 var/list/cargo_cartridges = list(
-	/obj/item/cartridge/quartermaster,	// This also covers cargo-techs, apparently, for some reason
+	/obj/item/cartridge/cargo,
 	/obj/item/cartridge/miner,
 	/obj/item/cartridge/hop
 	)

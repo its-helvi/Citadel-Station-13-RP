@@ -125,9 +125,9 @@
     radio = new /obj/item/integated_radio/signal(src)
     . = ..()
 
-/obj/item/cartridge/quartermaster
+/obj/item/cartridge/cargo
 	name = "\improper Space Parts & Space Vendors cartridge"
-	desc = "Perfect for the Quartermaster on the go!"
+	desc = "Perfect for the cargo technician on the go!"
 	icon_state = "cart-q"
 	access_quartermaster = 1
 
