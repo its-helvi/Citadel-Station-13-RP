@@ -286,13 +286,14 @@ GLOBAL_LIST_EMPTY(PDAs)
 		var/mob/living/carbon/human/H = loc
 		var/pdachoice = H.pdachoice
 		switch(pdachoice)
-			if(1) icon = 'icons/obj/pda.dmi'
-			if(2) icon = 'icons/obj/pda_slim.dmi'
-			if(3) icon = 'icons/obj/pda_old.dmi'
-			if(4) icon = 'icons/obj/pda_rugged.dmi'
-			if(5) icon = 'icons/obj/pda_minimal.dmi'
-			if(6) icon = 'icons/obj/pda_holo.dmi'
-			if(7)
+			// TODO: try to get these to proper subtypes without interfering with job specific PDA types
+			if(PDA_CHOICE_NORM) icon = 'icons/obj/pda.dmi'
+			if(PDA_CHOICE_SLIM) icon = 'icons/obj/pda_slim.dmi'
+			if(PDA_CHOICE_OLD) icon = 'icons/obj/pda_old.dmi'
+			if(PDA_CHOICE_RUGGED) icon = 'icons/obj/pda_rugged.dmi'
+			if(PDA_CHOICE_MINIMAL) icon = 'icons/obj/pda_minimal.dmi'
+			if(PDA_CHOICE_HOLO) icon = 'icons/obj/pda_holo.dmi'
+			if(PDA_CHOICE_WRIST)
 				icon = 'icons/obj/pda_wrist.dmi'
 				item_state = icon_state
 				item_icons = list(
@@ -313,7 +314,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 
 /obj/item/pda/proc/can_use()
-
 	if(!ismob(loc))
 		return 0
 
