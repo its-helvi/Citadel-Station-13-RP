@@ -15,6 +15,7 @@
 	icon_state = "mcontroller"
 	var/alarm = 0
 	var/coherence = 3600
+	var/alarm_thresholds = list(0.75, 0.5, 0.25)
 
 /obj/item/nvc/prime_drone_card/Initialize(mapload)
 	. = ..()
@@ -34,8 +35,9 @@
 		if(alarm)
 			alarm = 0
 			coherence = initial(coherence)
-			visible_message(SPAN_NOTICE("[icon2html(thing = src, target = world)] The mainboard beeps twice as its power supply stabilizes, displays and lights returning to normal."))
-			playsound(loc, 'sound/machines/2beep.ogg')
+			alarm_thresholds = initial(alarm_thresholds)
+			visible_message(SPAN_NOTICE("[icon2html(thing = src, target = world)] The mainboard beeps twice as its power supply stabilizes, display and lights returning to normal."))
+			playsound(loc, 'sound/machines/2beep.ogg', 100)
 		return
 	else
 		if(!alarm)
@@ -45,3 +47,10 @@
 								The display starts counting down!"))
 				playsound(src, 'sound/machines/cryo_warning.ogg', 100)
 		coherence -= delta_time
+		if(coherence <= 0)
+			visible_message(SPAN_REDTEXT("[icon2html(thing = src, target = world)] The neural processor emits a brief shower of sparks as the backup capacitor shorts out."))
+
+		if(coherence / initial(coherence) < alarm_thresholds?[1])
+			alarm_thresholds -= alarm_thresholds[1] // lummox when do we get deques
+			visible_message(SPAN_DANGER("[icon2html(thing = src, target = world)] The system's mainboard beeps loudly. [coherence] seconds."))
+			playsound(src, 'sound/machines/boobeebeep.ogg', 100)
