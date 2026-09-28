@@ -1,0 +1,4 @@
+author: "timothyteakettle"
+delete-after: True
+changes:
+  - bugfix: "exclude specific clothing from the loot pack that picks from all clothing"
