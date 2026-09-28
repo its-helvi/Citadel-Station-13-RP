@@ -1,0 +1,4 @@
+author: "timothyteakettle"
+delete-after: True
+changes:
+  - tweak: "modify bunny tall alt sprite so that the back colour and inner colour are separate"
