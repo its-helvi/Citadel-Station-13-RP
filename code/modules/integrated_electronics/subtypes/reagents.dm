@@ -314,7 +314,7 @@
 		attack_self(user)
 
 /obj/item/integrated_circuit/input/beaker_connector/do_work()
-	set_pin_data(IC_OUTPUT, 2, WEAKREF(src))
+	set_pin_data(IC_OUTPUT, 2, WEAKREF(current_beaker))
 	push_data()
 
 /obj/item/integrated_circuit/input/beaker_connector/attackby_react(var/obj/item/reagent_containers/I, var/mob/living/user)
