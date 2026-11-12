@@ -297,7 +297,7 @@
 	activators = list(
 		"on insert" = IC_PINTYPE_PULSE_OUT,
 		"on remove" = IC_PINTYPE_PULSE_OUT,
-		"ref updated" = IC_PINTYPE_PULSE_OUT
+		"push ref" = IC_PINTYPE_PULSE_IN
 		)
 
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
@@ -312,6 +312,10 @@
 		attackby_react(I, user, a_intent)
 	else
 		attack_self(user)
+
+/obj/item/integrated_circuit/input/beaker_connector/do_work()
+	set_pin_data(IC_OUTPUT, 2, WEAKREF(src))
+	push_data()
 
 /obj/item/integrated_circuit/input/beaker_connector/attackby_react(var/obj/item/reagent_containers/I, var/mob/living/user)
 	//Check if it truly is a reagent container
@@ -337,7 +341,6 @@
 	set_pin_data(IC_OUTPUT, 2, WEAKREF(current_beaker))
 	push_data()
 	activate_pin(1)
-	activate_pin(3)
 
 /obj/item/integrated_circuit/input/beaker_connector/attack_self(mob/user, datum/event_args/actor/actor)
 	. = ..()
@@ -357,7 +360,6 @@
 	set_pin_data(IC_OUTPUT, 2, null)
 	push_data()
 	activate_pin(2)
-	activate_pin(3)
 
 
 /obj/item/integrated_circuit/input/beaker_connector/proc/push_vol()
