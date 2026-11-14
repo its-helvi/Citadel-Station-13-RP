@@ -126,7 +126,7 @@
 		"robustharvest" =  list(  0,    0.2, 0  ),
 		"left4zed" =       list(  0,    0,   0.2),
 		"ash" =		       list(  0.5,  0.2, 0  ),
-		"catalyst" =       list(  0.5,  0    0.2)
+		"catalyst" =       list(  0.5,  0    0.2),
 		)
 
 	// Mutagen list specifies minimum value for the mutation to take place, rather
